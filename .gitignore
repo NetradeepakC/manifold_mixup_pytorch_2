@@ -1,0 +1,3 @@
+./supervised/data/
+*__pycache__*
+./data
