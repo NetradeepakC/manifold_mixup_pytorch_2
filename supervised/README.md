@@ -20,47 +20,47 @@ six==1.12.0
 
 #### No mixup Preactresnet18
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla 
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla 
 ```
 
 ####  Mixup Preactresnet18
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup Preactresnet18
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 #### No mixup Preactresnet34
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla 
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla 
 ```
 
 ####  Mixup Preactresnet34
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup Preactresnet34
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet34   --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0 
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch preactresnet34   --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0 
 ```
 
 #### No mixup WRN-28-10
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train vanilla
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train vanilla
 ```
 
 ####  Mixup WRN-28-10
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup WRN-28-10
 ```
-python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset cifar10 --data_dir ../data/cifar10/ --root_dir experiments/ --labels_per_class 5000 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 
@@ -68,47 +68,47 @@ python main.py --dataset cifar10 --data_dir data/cifar10/ --root_dir experiments
 
 #### No mixup Preactresnet18
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla 
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla 
 ```
 
 ####  Mixup Preactresnet18
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup Preactresnet18
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 #### No mixup Preactresnet34
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla
 ```
 
 ####  Mixup Preactresnet34
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup Preactresnet34
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet34   --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet34   --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 #### No mixup WRN-28-10
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train vanilla
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train vanilla
 ```
 
 ####  Mixup WRN-28-10
 ```
-python main.py --dataset cifar100 --data_dir data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset cifar100 --data_dir ../data/cifar100/ --root_dir experiments/ --labels_per_class 500 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup WRN-28-10
 ```
-python main.py --dataset cifar100 --data_dir data/cifar109/ --root_dir experiments/ --labels_per_class 500 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset cifar100 --data_dir ../data/cifar109/ --root_dir experiments/ --labels_per_class 500 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 
@@ -116,47 +116,47 @@ python main.py --dataset cifar100 --data_dir data/cifar109/ --root_dir experimen
 
 #### No mixup Preactresnet18
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla
 ```
 
 ####  Mixup Preactresnet18
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup Preactresnet18
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 #### No mixup Preactresnet34
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train vanilla
 ```
 
 ####  Mixup Preactresnet34
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet34  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup Preactresnet34
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet34   --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch preactresnet34   --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1500 --gammas 0.1 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 ```
 
 #### No mixup WRN-28-10
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train vanilla
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train vanilla
 ```
 
 ####  Mixup WRN-28-10
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup --mixup_alpha 1.0
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup --mixup_alpha 1.0
 ```
 
 #### Manifold mixup WRN-28-10
 ```
-python main.py --dataset svhn --data_dir data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
+python main.py --dataset svhn --data_dir ../data/svhn/ --root_dir experiments/ --labels_per_class 7325 --arch wrn28_10  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 400 --schedule 200 300 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 2.0
 
 ```
 
@@ -173,17 +173,17 @@ python utils.py
 5. Run the following commands  
 #### No mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train vanilla 
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train vanilla 
 ```
 
 ####  Mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup --mixup_alpha 0.2
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup --mixup_alpha 0.2
 ```
 
 #### Manifold mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 0.2
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 0.2
 
 ```
 
