@@ -16,6 +16,8 @@ import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pyplot as plt
 
+import heapq
+
 from utils import *
 import models
 
@@ -173,7 +175,7 @@ def accuracy(output, target, topk=(1,)):
 
     res = []
     for k in topk:
-        correct_k = correct[:k].view(-1).float().sum(0)
+        correct_k = correct[:k].reshape(-1).float().sum(0)
         res.append(correct_k.mul_(100.0 / batch_size))
     return res
 
@@ -310,7 +312,7 @@ def validate(val_loader, model, log):
 
   for i, (input, target) in enumerate(val_loader):
     if args.use_cuda:
-      target = target.cuda(async=True)
+      target = target.cuda(non_blocking=True)
       input = input.cuda()
     with torch.no_grad():
         input_var = Variable(input)
@@ -422,6 +424,8 @@ def main():
     test_loss=[]
     test_acc=[]
     
+    conv_min_heap=[]
+    conv_max_heap=[]
     
     for epoch in range(args.start_epoch, args.epochs):
         current_learning_rate = adjust_learning_rate(optimizer, epoch, args.gammas, args.schedule)
@@ -442,8 +446,6 @@ def main():
         train_acc.append(tr_acc)
         test_loss.append(val_los)
         test_acc.append(val_acc)
-        
-
 
         dummy = recorder.update(epoch, tr_los, tr_acc, val_los, val_acc)
 
