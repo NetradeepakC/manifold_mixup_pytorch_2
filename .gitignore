@@ -1,3 +1,4 @@
-./supervised/data/
+supervised/data/
+supervised/experiments/
 *__pycache__*
-./data
+data/
