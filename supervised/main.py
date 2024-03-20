@@ -34,6 +34,8 @@ from plots import *
 from analytical_helper_script import run_test_with_mixup
 #from attacks import run_test_adversarial, fgsm, pgd
 
+def list_of_ints(arg):
+    return list(map(int, arg.split(',')))
 
 model_names = sorted(name for name in models.__dict__
   if name.islower() and not name.startswith("__")
@@ -55,6 +57,7 @@ parser.add_argument('--initial_channels', type=int, default=64, choices=(16,64))
 # Optimization options
 parser.add_argument('--epochs', type=int, default=300, help='Number of epochs to train.')
 parser.add_argument('--train', type=str, default = 'vanilla', choices =['vanilla','mixup', 'mixup_hidden','cutout'])
+parser.add_argument('--mixup_layer', type=list_of_ints, default=[], help='which layer for mixup')
 parser.add_argument('--mixup_alpha', type=float, default=0.0, help='alpha parameter for mixup')
 parser.add_argument('--cutout', type=int, default=16, help='size of cut out')
 
@@ -235,7 +238,13 @@ def train(train_loader, model, optimizer, epoch, args, log):
             
         elif args.train== 'mixup_hidden':
             input_var, target_var = Variable(input), Variable(target)
-            output, reweighted_target = model(input_var, target_var, mixup_hidden= True, mixup_alpha = args.mixup_alpha)
+            mixup_layers=args.mixup_layer
+            output=None
+            reweighted_target=None
+            if len(mixup_layers)==0:
+                output, reweighted_target = model(input_var, target_var, mixup_hidden= True, mixup_alpha = args.mixup_alpha)
+            else:
+                output, reweighted_target = model(input_var, target_var, mixup_hidden= True, mixup_alpha = args.mixup_alpha, layer_mix=mixup_layers[random. randint(0, len(mixup_layers)-1)])
             loss = bce_loss(softmax(output), reweighted_target)#mixup_criterion(target_a, target_b, lam)
             """
             input_var, target_var = Variable(input), Variable(target)
@@ -350,7 +359,7 @@ def main():
                     job_id=args.job_id,
                     add_name=args.add_name)
     
-    exp_dir = args.root_dir+exp_name
+    exp_dir = args.root_dir+exp_name+"_layers_"+str(args.mixup_layer)
 
     if not os.path.exists(exp_dir):
             os.makedirs(exp_dir)
@@ -362,7 +371,11 @@ def main():
 
     global best_acc
 
-    log = open(os.path.join(exp_dir, 'log.txt'.format(args.manualSeed)), 'w')
+    log=None
+    if(args.resume):
+        log = open(os.path.join(exp_dir, 'log.txt'.format(args.manualSeed)), 'a')
+    else:
+        log = open(os.path.join(exp_dir, 'log.txt'.format(args.manualSeed)), 'w')
     print_log('save path : {}'.format(exp_dir), log)
     state = {k: v for k, v in args._get_kwargs()}
     print_log(state, log)

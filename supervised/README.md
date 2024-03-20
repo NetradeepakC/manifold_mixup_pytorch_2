@@ -183,7 +183,11 @@ python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/
 
 #### Manifold mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 0.2
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 0.2 --mixup_layer 0,1,2
+
+With Resume
+
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18  --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 1000 1500 --gammas 0.1 0.1 --train mixup_hidden --mixup_alpha 0.2 --mixup_layer 0,1,2 --resume experiments/tiny-imagenet-200_arch_preactresnet18_train_mixup_hidden_m_alpha_0.2_do_False_eph_2000_bs_100_lr_0.1_mom_0.9_decay_0.0001_data_aug_1_job_id__layers_\[0,\ 1,\ 2\]/checkpoint.pth.tar
 
 ```
 
