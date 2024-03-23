@@ -1,6 +1,7 @@
 # Manifold_mixup Supervised
 
-### Requirements
+## Use the provided enviroment.yml file for Pytorch 2
+### Requirements for legacy pytorch 1 support
 This code has been tested with  
 python 3.6.8  
 torch 1.0.0  
