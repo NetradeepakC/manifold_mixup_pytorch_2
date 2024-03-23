@@ -398,10 +398,11 @@ def main():
     #train_loader, valid_loader, _ , test_loader, num_classes = load_data_subset(args.data_aug, args.batch_size, 2, args.dataset, args.data_dir, 0.0, labels_per_class=5000)
     print_log("=> creating model '{}'".format(args.arch), log)
     net = models.__dict__[args.arch](num_classes,args.dropout,per_img_std, stride).cuda()
+    if args.ngpu>1:
+        net = torch.nn.DataParallel(net, device_ids=list(range(args.ngpu)))
     print_log("=> network :\n {}".format(net), log)
     args.num_classes = num_classes
 
-    #net = torch.nn.DataParallel(net, device_ids=list(range(args.ngpu)))
 
     optimizer = torch.optim.SGD(net.parameters(), state['learning_rate'], momentum=state['momentum'],
                 weight_decay=state['decay'], nesterov=True)
