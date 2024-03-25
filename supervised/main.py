@@ -85,9 +85,11 @@ parser.add_argument('--workers', type=int, default=2, help='number of data loadi
 parser.add_argument('--manualSeed', type=int, help='manual seed')
 parser.add_argument('--add_name', type=str, default='')
 parser.add_argument('--job_id', type=str, default='')
+parser.add_argument('--whichGPU', type=int, default=0)
 
 args = parser.parse_args()
 args.use_cuda = args.ngpu>0 and torch.cuda.is_available()
+torch.cuda.set_device(args.whichGPU)
 
 out_str = str(args)
 print(out_str)

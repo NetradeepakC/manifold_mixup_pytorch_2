@@ -105,7 +105,7 @@ class PreActResNet(nn.Module):
         
         if mixup_hidden:
             if layer_mix == None:
-                layer_mix = random.randint(0,3)
+                layer_mix = random.randint(0,2)
         elif mixup:
             layer_mix = 0
         else:
