@@ -106,7 +106,7 @@ class RecorderMeter(object):
     plt.grid()
     plt.title(title, fontsize=20)
     plt.xlabel('the training epoch', fontsize=16)
-    plt.ylabel('accuracy', fontsize=16)
+    plt.ylabel('loss', fontsize=16)
     
     y_axis[:] = self.epoch_losses[:, 0]
     plt.plot(x_axis, y_axis*50, color='g', linestyle='-', label='train-loss-x50', lw=2)
