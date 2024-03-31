@@ -174,32 +174,32 @@ python utils.py
 5. Run the following commands  
 #### No mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train vanilla 
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 conda aenvironment --train vanilla 
 ```
 
 ####  Mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup --mixup_alpha 0.2
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup --mixup_alpha 0.1
 ```
 
 #### Manifold mixup Preactresnet18
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.2 --mixup_layer 0,1,2,3
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.1 --mixup_layer 0,1,2,3
 ```
 
 #### With Data Parallelism
 ```
- python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.2 --mixup_layer 0,1,2,3 --ngpu 2
+ python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.1 --mixup_layer 0,1,2,3 --ngpu 2
 ```
 
-#### Select a specific GPU
+#### Select a specific GPU (Use to run multiple models on the same machine if it has multiple GPUs each capable of running one model)
 ```
- python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.2 --mixup_layer 0,1,2,3 --whichGPU 1
+ python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.1 --mixup_layer 0,1,2,3 --whichGPU 1
 ```
 
 #### With Resume
 ```
-python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.2 --mixup_layer 0,1,2,3 --resume experiments/[SELECT_FOLDER_NAME]/checkpoint.pth.tar
+python main.py --dataset tiny-imagenet-200 --data_dir ../data/tiny-imagenet-200/ --root_dir experiments/ --labels_per_class 500 --arch preactresnet18 --learning_rate 0.1 --momentum 0.9 --decay 0.0001 --epochs 2000 --schedule 500 1000 1300 1550 1750 --gammas 0.5 0.25 0.125 0.5 0.5 --train mixup_hidden --mixup_alpha 0.1 --mixup_layer 0,1,2,3 --resume experiments/[SELECT_FOLDER_NAME]/checkpoint.pth.tar
 
 ```
 
